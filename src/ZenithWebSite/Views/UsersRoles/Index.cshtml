@@ -1,0 +1,48 @@
+@model IDictionary<ApplicationUser, List<Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole>>
+@{
+    ViewBag.Title = "UsersRoles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Manage User Roles</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Roles</th>
+        </tr>
+    </thead>
+    @foreach (var UsersRoles in Model)
+    {
+        <tr>
+            <td>
+                @UsersRoles.Key.UserName
+            </td>
+            <td>
+                @UsersRoles.Key.FirstName
+            </td>
+            <td>
+                @UsersRoles.Key.LastName
+            </td>
+            <td>
+                @UsersRoles.Key.Email
+            </td>
+            <td>
+                @foreach (var role in UsersRoles.Value)
+                {
+                    @role.Name
+                    <br />
+                }
+                
+            </td>
+            <td>
+                <a asp-action="GrantRole" asp-route-id="@UsersRoles.Key.Id">Grant Role</a>
+                <br />
+                <a asp-action="RevokeRole" asp-route-id="@UsersRoles.Key.Id">Revoke Role</a>
+            </td>
+        </tr>
+    }
+</table>

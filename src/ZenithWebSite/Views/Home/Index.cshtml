@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ZenithWebSite.Models.Event>
+@{
+    ViewBag.Title = "Home Page";
+    string thisWeek = ViewBag.ThisWeek;
+
+}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-3">The Zenith Society</h1>
+        <p class="lead">is a family oriented non-for-profit organization that holds events during the week.</p>
+    </div>
+</div>
+<hr />
+<div class="alert alert-success" role="alert">
+    <h2>
+        The Event Schedule of the Week
+        <span id="thisweek" class="badge badge-pill badge-default">@thisWeek</span>
+    </h2>
+</div>
+
+<table class="table">
+    @foreach (var ev in Model.GroupBy(item => item.FromTime.Date))
+    {
+        <tr>
+            <th class="alert-info" colspan="2">
+                @ev.Key.ToString("dddd, MMMM dd, yyyy")
+            </th>
+        </tr>
+        foreach (var e in ev)
+        {
+            <tr>
+                <td class="event_rows">
+                    @e.FromTime.ToString("hh:mm tt") - @e.ToTime.ToString("hh:mm tt")
+                </td>
+                <td>
+                    <em>@e.Activity.ActivityDescription</em>
+                </td>
+            </tr>
+        }
+    }
+</table>

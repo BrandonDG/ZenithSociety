@@ -1,0 +1,32 @@
+﻿This project has two migrations directories...
+One is right under "ZenithWebSite" directory, that is the right place,
+and another is "ZenithWebSite\Data", which is created by Visual Studio when it made this project.
+So, you should perform migration commands, such as "dotnet ef migrations add FirstMigration", 
+right under "ZenithWebSite".
+
+If "ZenithWebSite\Migrations" directory already has migration files, 
+you should first get rid of those files by using this command,
+
+dotnet ef migrations remove.
+
+Then you should carry out 
+
+dotnet ef migrations add FirstMigration. 
+
+After that, perform 
+
+dotnet ef database update.
+
+As result, you could get the sqlserver database having empty tables under your login directory.
+For example, my computer's user id is "ischoi", 
+so ZenithWebSiteDB, that is our assignment database, is created under C:\Users\ischoi directory.
+
+This database doesn't have any seed data, but once you execute the command, 
+
+"dotnet run",
+
+our seed data is inserted into the database.
+
+While dotnet server is running, you could see our first assignment's home page on the web browser, 
+
+http://localhost:5000

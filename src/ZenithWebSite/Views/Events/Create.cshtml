@@ -1,0 +1,77 @@
+@model ZenithWebSite.Models.Event
+
+@{
+    ViewData["Title"] = "Event Creation";
+}
+
+<h2>Creating Event</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        @*<h4>Event</h4>*@
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ActivityId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+            @* Written by Iksoo *@
+                @*<select asp-for="ActivityId" class="form-control" asp-items="ViewBag.ActivityId"></select>*@
+                @Html.DropDownList("ActivityId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ActivityId, "", new { @class = "text-danger" })
+            @* -- *@
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FromTime" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FromTime" class="form-control" />
+                <span asp-validation-for="FromTime" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ToTime" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ToTime" class="form-control" />
+                <span asp-validation-for="ToTime" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="IsActive" />
+                    <label asp-for="IsActive"></label>
+                </div>
+            </div>
+        </div>
+        
+
+        @*<div class="form-group">
+            <label asp-for="CreationDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EnteredBy" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EnteredBy" class="form-control" />
+                <span asp-validation-for="EnteredBy" class="text-danger" />
+            </div>
+        </div>*@
+               
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

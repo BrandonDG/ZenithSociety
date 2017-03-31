@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9CF96CAB-0CB4-4E9D-A088-556A7D679E12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{478329A0-B21F-46C5-BD7F-C02DB1B7FB32}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ZenithWebSite", "src\ZenithWebSite\ZenithWebSite.xproj", "{F0F4D49B-B6CD-4C74-A2AE-6AC027420A42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0F4D49B-B6CD-4C74-A2AE-6AC027420A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0F4D49B-B6CD-4C74-A2AE-6AC027420A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0F4D49B-B6CD-4C74-A2AE-6AC027420A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0F4D49B-B6CD-4C74-A2AE-6AC027420A42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F0F4D49B-B6CD-4C74-A2AE-6AC027420A42} = {9CF96CAB-0CB4-4E9D-A088-556A7D679E12}
+	EndGlobalSection
+EndGlobal
