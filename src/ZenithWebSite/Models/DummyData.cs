@@ -35,65 +35,6 @@ namespace ZenithWebSite.Models
 
         private static void SeedUsers(ApplicationDbContext db)
         {
-            //var roleManager = new RoleManager<IdentityRole>(
-            //        new RoleStore<IdentityRole>(db), null, null, null, null, null);
-
-            //if (!roleManager.RoleExistsAsync("Admin").Result)
-            //{
-            //    var x = roleManager.CreateAsync(new IdentityRole("Admin")).Result;
-            //}
-
-            //if (!roleManager.RoleExistsAsync("Member").Result)
-            //{
-            //    var x = roleManager.CreateAsync(new IdentityRole("Member")).Result;
-            //}
-
-            //var userManager = new UserManager<ApplicationUser>(
-            //        new UserStore<ApplicationUser>(db), null, null, null, null, null, null, null, null);
-
-            //// Createing user a@a.a and adding to admin role
-            //if (userManager.FindByNameAsync("a").Result == null)
-            //{
-            //    var user = new ApplicationUser
-            //    {
-            //        UserName = "a",
-            //        FirstName = "Site",
-            //        LastName = "Admin",
-            //        Email = "a@a.a",
-            //        NormalizedEmail = "A@A.A",
-            //        NormalizedUserName = "A"
-            //    };
-            //    var result = userManager.CreateAsync(user, "P@$$w0rd").Result;
-            //    if (result.Succeeded)
-            //    {
-            //        var appUser = userManager.FindByEmailAsync(user.Email).Result;
-            //        var x = userManager.AddToRoleAsync(appUser, "Admin").Result;
-            //            x = userManager.AddToRoleAsync(appUser, "Member").Result;
-            //    }
-
-            //}
-
-            //// Createing user m@m.m and adding to member role
-            //if (userManager.FindByNameAsync("m").Result == null)
-            //{
-            //    var user = new ApplicationUser
-            //    {
-            //        UserName = "m",
-            //        FirstName = "Society",
-            //        LastName = "Member",
-            //        Email = "m@m.m",
-            //        NormalizedEmail = "M@M.M",
-            //        NormalizedUserName = "M",
-            //    };
-            //    var result = userManager.CreateAsync(user, "P@$$w0rd").Result;
-            //    if (result.Succeeded)
-            //    {
-            //        var appUser = userManager.FindByEmailAsync(user.Email).Result;
-            //        var x = userManager.AddToRoleAsync(appUser, "Member").Result;
-            //    }
-            //}
-
-
             var admin = new ApplicationUser
             {
                 UserName = "a",
