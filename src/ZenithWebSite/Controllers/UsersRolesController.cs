@@ -119,8 +119,10 @@ namespace ZenithWebSite.Controllers
         // Query, if user is seeded admin, filter out Admin role.
         private string getRevokeRoles(string userId)
         {
+            //2d8ef36e-7a9c-4951-beab-2419d26a08e6
+            //b1814150-daf7-4557-b347-46fd0d0a15e1
             string query;
-            if (userId.Equals("b1814150-daf7-4557-b347-46fd0d0a15e1"))
+            if (userId.Equals("2d8ef36e-7a9c-4951-beab-2419d26a08e6"))
             {
                 query = "SELECT * FROM AspNetRoles WHERE Id IN(SELECT RoleId from AspNetUserRoles WHERE UserId = '" + userId + "') "
                     + "AND Name != 'Admin'";
