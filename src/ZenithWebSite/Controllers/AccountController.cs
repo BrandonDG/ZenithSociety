@@ -114,6 +114,7 @@ namespace ZenithWebSite.Controllers
                     Email = model.Email };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
+                await _userManager.AddToRoleAsync(user, "Member");
                 if (result.Succeeded)
                 {
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=532713
@@ -134,11 +135,11 @@ namespace ZenithWebSite.Controllers
         }
 
         //
-        // POST: /api/Account/Register
+        // POST: Account/ApiRegister
         [HttpPost]
         [AllowAnonymous]
-        [Route("api/Account/Register")]
-        public async Task<IActionResult> Register([FromBody]RegisterViewModel model)
+        [Route("Account/ApiRegister")]
+        public async Task<IActionResult> ApiRegister([FromBody]RegisterViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -163,7 +164,7 @@ namespace ZenithWebSite.Controllers
             }
 
             return Ok();
-        }
+        } 
 
         //
         // POST: /Account/LogOff
